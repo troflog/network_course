@@ -35,7 +35,7 @@ wget screen cscope
 wget https://dl-ssl.google.com/linux/linux_signing_key.pub
 sudo apt-key add linux_signing_key.pub
 sudo apt update 
-sudo apt install google-chrome-stable
+sudo apt install -y google-chrome-stable
 
 #~~~~~~~~~~~~~~~~~~~~~~#
 #    GITHUB REPOS      #
