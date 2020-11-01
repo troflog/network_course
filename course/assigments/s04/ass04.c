@@ -10,7 +10,7 @@ char *ip_address = '192.168.0.10";
 
 int32_t get_ip_integer_equivalent(char *ip_address);
 int32_t get_mask_integer_equivalent(int mask);
-char *int2bin(int a, char *buffer, int buf_size);
+void int2bin(int a, char *buffer, int buf_size);
 
 int main() {
    char buffer[BUF_SIZE];
@@ -41,7 +41,7 @@ int32_t get_ip_integer_equivalent(char *ip_address){
 // Write to the buffer backwards so that the binary representation
 // is in the correct order i.e.  the LSB is on the far right
 // instead of the far left of the printed string
-char *int2bin(int a, char *buffer, int buf_size) {
+void int2bin(int a, char *buffer, int buf_size) {
     buffer += (buf_size - 1);
 
     for (int i = 31; i >= 0; i--) {
@@ -54,7 +54,6 @@ char *int2bin(int a, char *buffer, int buf_size) {
         a >>= 1;
     }
 
-    return buffer;
 }
 
 #define BUF_SIZE 33
