@@ -22,6 +22,15 @@ int32_t int_ip = get_ip_integer_equivalent(ip_address);
 printf("Integer equivalent for %s is %u\n",ip_adress,int_ip;
 */
 int32_t get_ip_integer_equivalent(char *ip_address);
+/*
+int32_t int_ip = 2058138165;
+char ipadd_buffer[PREFIX_LEN];
+memset(ipadd_buffer,0,PREFIX_LEN];
+get_abcd_ip_format[int_ip,ipadd_buffer);
+printf("IP=%u in A.B.C.D format is = %s\n",int_ip,ipadd_buffer);
+*/
+get_abcd_ip_format[int_ip,ipadd_buffer);
+
 int32_t get_mask_integer_equivalent(int mask);
 void int2bin(int a, char *buffer, int buf_size);
 
