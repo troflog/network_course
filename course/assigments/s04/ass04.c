@@ -1,3 +1,4 @@
+
 /*get_broadcast_address(char *ip_addr,char mask,char output_buffer);
 get_ip_integer_equivalent(char *ip_address);
 char *ip_address = '192.168.0.10";
@@ -6,8 +7,20 @@ char *ip_address = '192.168.0.10";
 #include <stdio.h>
 #include <stdint.h>
 #define BUF_SIZE 33
-
-
+/*
+char ipadd_buffer[PREFIX_LEN];
+memset(ipadd_buffer,0,PREFIX_LEN);
+char *ip_address = "192.168.2.10";
+mask = 20;
+get_broadcast_address(ip_address,mask,ipadd_buffer);
+print("Broadcast adress = %s\n",ipadd_buffer);
+*/
+void get_broadcast_address(char *ip_address,int mask,char *output_buffer);
+/*
+char *ip_address = "192.168.2.10";
+int32_t int_ip = get_ip_integer_equivalent(ip_address);
+printf("Integer equivalent for %s is %u\n",ip_adress,int_ip;
+*/
 int32_t get_ip_integer_equivalent(char *ip_address);
 int32_t get_mask_integer_equivalent(int mask);
 void int2bin(int a, char *buffer, int buf_size);
