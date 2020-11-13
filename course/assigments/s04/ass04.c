@@ -7,6 +7,8 @@ char *ip_address = '192.168.0.10";
 #include <stdio.h>
 #include <stdint.h>
 #define BUF_SIZE 33
+#define PREFIX_LEN 15
+
 /*
 char ipadd_buffer[PREFIX_LEN];
 memset(ipadd_buffer,0,PREFIX_LEN);
@@ -29,7 +31,7 @@ memset(ipadd_buffer,0,PREFIX_LEN];
 get_abcd_ip_format[int_ip,ipadd_buffer);
 printf("IP=%u in A.B.C.D format is = %s\n",int_ip,ipadd_buffer);
 */
-get_abcd_ip_format[int_ip,ipadd_buffer);
+void get_abcd_ip_format(int32_t int_ip,char *ipadd_buffer);
 
 int32_t get_mask_integer_equivalent(int mask);
 void int2bin(int a, char *buffer, int buf_size);
