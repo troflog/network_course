@@ -34,19 +34,17 @@ printf("IP=%u in A.B.C.D format is = %s\n",int_ip,ipadd_buffer);
 void get_abcd_ip_format(int32_t int_ip,char *ipadd_buffer);
 
 int32_t get_mask_integer_equivalent(int mask);
+// Function which convert number to binary
 void int2bin(int a, char *buffer, int buf_size);
 
 int main() {
    char buffer[BUF_SIZE];
    buffer[BUF_SIZE - 1] = '\0';
-
    char ip_string[] = "128.168.0.10";
-
    int32_t ip_integer;
+
    ip_integer = get_ip_integer_equivalent(ip_string);
-
    int2bin(ip_integer,buffer,BUF_SIZE-1);
-
 
    printf("%s as integer=%u\n",ip_string,ip_integer);
    printf("%s as binary=%s\n",ip_string,buffer);
