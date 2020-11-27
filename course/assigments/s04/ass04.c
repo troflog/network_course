@@ -1,3 +1,6 @@
+/*------------------------*/
+/* IP ADRESS MANIUPLATION */
+/*------------------------*/
 
 /*get_broadcast_address(char *ip_addr,char mask,char output_buffer);
 get_ip_integer_equivalent(char *ip_address);
