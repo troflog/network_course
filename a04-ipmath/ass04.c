@@ -9,6 +9,8 @@ char *ip_address = '192.168.0.10";
 
 #include <stdio.h>
 #include <stdint.h>
+
+/*Constants*/
 #define BUF_SIZE 33
 #define PREFIX_LEN 15
 
@@ -16,15 +18,16 @@ char *ip_address = '192.168.0.10";
 char ipadd_buffer[PREFIX_LEN];
 memset(ipadd_buffer,0,PREFIX_LEN);
 char *ip_address = "192.168.2.10";
-mask = 20;
+int mask = 20;
 get_broadcast_address(ip_address,mask,ipadd_buffer);
 print("Broadcast adress = %s\n",ipadd_buffer);
 */
 void get_broadcast_address(char *ip_address,int mask,char *output_buffer);
+
 /*
 char *ip_address = "192.168.2.10";
 int32_t int_ip = get_ip_integer_equivalent(ip_address);
-printf("Integer equivalent for %s is %u\n",ip_adress,int_ip;
+printf("Integer equivalent for %s is %u\n",ip_adress,int_ip);
 */
 int32_t get_ip_integer_equivalent(char *ip_address);
 /*
@@ -36,6 +39,14 @@ printf("IP=%u in A.B.C.D format is = %s\n",int_ip,ipadd_buffer);
 */
 void get_abcd_ip_format(int32_t int_ip,char *ipadd_buffer);
 
+/*char ipadd_buff[PREFIX_LEN];
+memset(ipadd_buffer,0,PREFIX_LEN);
+char *ip_add = "192.168.2.10";
+int mask = 20;
+get_network_id(ip_add,mask,ipadd_buff);
+print("Network Id = %s\n",ipadd_buff);
+*/
+void get_network_id(char *ip_addr,int mask,char* output_buffer);
 int32_t get_mask_integer_equivalent(int mask);
 // Function which convert number to binary
 void int2bin(int a, char *buffer, int buf_size);
