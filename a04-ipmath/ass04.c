@@ -30,6 +30,7 @@ int32_t int_ip = get_ip_integer_equivalent(ip_address);
 printf("Integer equivalent for %s is %u\n",ip_adress,int_ip);
 */
 int32_t get_ip_integer_equivalent(char *ip_address);
+
 /*
 int32_t int_ip = 2058138165;
 char ipadd_buffer[PREFIX_LEN];
@@ -39,7 +40,8 @@ printf("IP=%u in A.B.C.D format is = %s\n",int_ip,ipadd_buffer);
 */
 void get_abcd_ip_format(int32_t int_ip,char *ipadd_buffer);
 
-/*char ipadd_buff[PREFIX_LEN];
+/*
+char ipadd_buff[PREFIX_LEN];
 memset(ipadd_buffer,0,PREFIX_LEN);
 char *ip_add = "192.168.2.10";
 int mask = 20;
@@ -47,7 +49,20 @@ get_network_id(ip_add,mask,ipadd_buff);
 print("Network Id = %s\n",ipadd_buff);
 */
 void get_network_id(char *ip_addr,int mask,char* output_buffer);
-int32_t get_mask_integer_equivalent(int mask);
+
+/*
+unsigned char mask = 24;
+printf("Subnest cardinality for Mask = %u is %u\n",mask,get_subnet_cardinality(char mask));
+*/
+int32_t get_subnet_cardinality(char mask);
+/*
+char *network_id = '192.168.0.0';
+unsigned char mask = 24;
+char *check_ip = '192.168.0.0';
+int32_t result = check_ip_subnet_mebership(char *network_id,char mask, char *check_ip);
+*/
+int32_t check_ip_subnet_mebership(char *network_id,char mask, char *check_ip);
+
 // Function which convert number to binary
 void int2bin(int a, char *buffer, int buf_size);
 
