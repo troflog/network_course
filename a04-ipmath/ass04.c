@@ -9,7 +9,7 @@ char *ip_address = '192.168.0.10";
 
 #include <stdio.h>
 #include <stdint.h>
-
+#include <string.h>
 /*Constants*/
 #define BUF_SIZE 33
 #define PREFIX_LEN 15
@@ -24,11 +24,6 @@ print("Broadcast adress = %s\n",ipadd_buffer);
 */
 void get_broadcast_address(char *ip_address,int mask,char *output_buffer);
 
-/*
-char *ip_address = "192.168.2.10";
-int32_t int_ip = get_ip_integer_equivalent(ip_address);
-printf("Integer equivalent for %s is %u\n",ip_adress,int_ip);
-*/
 int32_t get_ip_integer_equivalent(char *ip_address);
 
 /*
@@ -68,18 +63,36 @@ void int2bin(int a, char *buffer, int buf_size);
 
 int main() {
    char buffer[BUF_SIZE];
-   buffer[BUF_SIZE - 1] = '\0';
    char ip_string[] = "128.168.0.10";
+   char ip_string_out[16];
    int32_t ip_integer;
 
+   /*
+    Test get_ip_integer_equivalent
+    Input         128.168.0.10
+    Output        2158493706
+    binary output 10000000101010000000000000001010
+   */
    ip_integer = get_ip_integer_equivalent(ip_string);
+   buffer[BUF_SIZE - 1] = '\0';
    int2bin(ip_integer,buffer,BUF_SIZE-1);
-
    printf("%s as integer=%u\n",ip_string,ip_integer);
    printf("%s as binary=%s\n",ip_string,buffer);
+   /*
+    Test get_abcd_ip_format
+    Input       2158493706
+    Output      128.168.0.10
+   */
+   get_abcd_ip_format(ip_integer,ip_string_out);
+   printf("%d as abcd ip string format=%s\n",ip_integer,ip_string_out);
    return 0;
 }
 
+/*
+char *ip_address = "192.168.2.10";
+int32_t int_ip = get_ip_integer_equivalent(ip_address);
+printf("Integer equivalent for %s is %u\n",ip_adress,int_ip);
+*/
 int32_t get_ip_integer_equivalent(char *ip_address){
     uint32_t c1,c2,c3,c4;
     uint32_t ip;
@@ -88,6 +101,18 @@ int32_t get_ip_integer_equivalent(char *ip_address){
     ip = c4+c3*256+c2*256*256+c1*256*256*256;
     return ip;
 }
+
+/*
+int32_t int_ip = 2058138165;
+char ipadd_buffer[PREFIX_LEN];
+memset(ipadd_buffer,0,PREFIX_LEN];
+get_abcd_ip_format[int_ip,ipadd_buffer);
+printf("IP=%u in A.B.C.D format is = %s\n",int_ip,ipadd_buffer);
+*/
+void get_abcd_ip_format(int32_t int_ip,char *ipadd_buffer){
+
+}
+
 // buffer must have length >= sizeof(int) + 1
 // Write to the buffer backwards so that the binary representation
 // is in the correct order i.e.  the LSB is on the far right
