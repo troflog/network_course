@@ -65,7 +65,7 @@ int main() {
    char buffer[BUF_SIZE];
    char ip_string[] = "128.168.0.10";
    char ip_string_out[16];
-   int32_t ip_integer;
+   uint32_t ip_integer;
 
    /*
     Test get_ip_integer_equivalent
@@ -83,8 +83,9 @@ int main() {
     Input       2158493706
     Output      128.168.0.10
    */
+   ip_integer = 2158493706;
    get_abcd_ip_format(ip_integer,ip_string_out);
-   printf("%d as abcd ip string format=%s\n",ip_integer,ip_string_out);
+   printf("Integer IP adress %u in abcd format = %s\n",ip_integer,ip_string_out);
    return 0;
 }
 
