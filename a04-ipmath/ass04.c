@@ -90,7 +90,7 @@ int main() {
     */
 
     ip_integer_calc = get_ip_integer_equivalent(ip_string);
-    printf("Test int2bin:                    Output %u:    Correct = %u\n",ip_integer_calc,ip_integer);
+    printf("Test int2bin:                    Output %u:    Correct = %u\n\n",ip_integer_calc,ip_integer);
 
     /*
      *Test get_abcd_ip_format
@@ -98,16 +98,18 @@ int main() {
      *Output      128.168.0.10
      */
     get_abcd_ip_format(ip_integer,ip_string_calc);
-    printf("Test get_abcd_ip_format:         Output %s:  Correct = %s\n",ip_string_calc,ip_string);
+    printf("Test get_abcd_ip_format:         Output %s:  Correct = %s\n\n",ip_string_calc,ip_string);
      /*
       *Test get_subnet_cardinality
       * Input 24
       * Output 4294967040;
       */
     subnet_mask_calc = get_subnet_cardinality(subnet_prefix);
-    printf("test get_subnet_cardinality:     Output %u:    Correct = %u\n",subnet_mask_calc,subnet_mask);
-
-
+    printf("Test get_subnet_cardinality:     Output %u:    Correct = %u\n",subnet_mask_calc,subnet_mask);
+    /*print subnet cardinality as binary*/
+    buffer[BUF_SIZE - 1] = '\0';
+    int2bin(subnet_mask_calc,buffer,BUF_SIZE-1);
+    printf("Subnet cardinality for mask %d as binary=%s\n\n",subnet_prefix,buffer);
 
     /*
     char ipadd_buffer[prefix_len];
@@ -117,11 +119,16 @@ int main() {
     get_broadcast_address(ip_address,mask,ipadd_buffer);
     print("broadcast adress = %s\n",ipadd_buffer);
     */
+    /*Test get_subnet_cardinality*/
+    /*Input ip adress 192.168.2.10 and mask = 24*/
+    /*Output*/
+     /*;*/
+    int mask = 20;
     void get_broadcast_address(char *ip_address,int mask,char *output_buffer);
     /*testing*/
     buffer[BUF_SIZE - 1] = '\0';
     /*int x = 0xFFFFFFFF<<(32-subnet_prefix);*/
-    int x =15;
+    uint32_t x =15;
     int2bin(x,buffer,BUF_SIZE-1);
     printf("%d as binary=%s\n",x,buffer);
     /*unsigned long per = (0xFFFFFFFF << (32 - mask)) & 0xFFFFFFFF;*/
