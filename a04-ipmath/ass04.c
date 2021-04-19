@@ -2,11 +2,6 @@
 /* IP ADRESS MANIUPLATION */
 /*------------------------*/
 
-/*get_broadcast_address(char *ip_addr,char mask,char output_buffer);
-get_ip_integer_equivalent(char *ip_address);
-char *ip_address = '192.168.0.10";
-*/
-
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
@@ -18,8 +13,8 @@ char *ip_address = "192.168.2.10";&j
 int32_t int_ip = get_ip_integer_equivalent(ip_address);
 printf("Integer equivalent for %s is %u\n",ip_adress,int_ip);
 */
-
 uint32_t get_ip_integer_equivalent(char *ip_address);
+
 /*
 int32_t int_ip = 2058138165;
 char ipadd_buffer[PREFIX_LEN];
@@ -28,11 +23,13 @@ get_abcd_ip_format[int_ip,ipadd_buffer);
 printf("IP=%u in A.B.C.D format is = %s\n",int_ip,ipadd_buffer);
 */
 void get_abcd_ip_format(uint32_t int_ip,char *ipadd_buffer);
+
 /*
 unsigned char mask = 24;
 printf("Subnest cardinality for Mask = %u is %u\n",mask,get_subnet_cardinality(char mask));
 */
 uint32_t get_subnet_cardinality(int mask);
+
 /*
 char ipadd_buffer[PREFIX_LEN];
 memset(ipadd_buffer,0,PREFIX_LEN);
@@ -42,6 +39,7 @@ get_broadcast_address(ip_address,mask,ipadd_buffer);
 print("Broadcast adress = %s\n",ipadd_buffer);
 */
 void get_broadcast_address(char *ip_address,int mask,char *output_buffer);
+
 /*
 char ipadd_buff[PREFIX_LEN];
 memset(ipadd_buffer,0,PREFIX_LEN);
@@ -65,6 +63,7 @@ void int2bin(int a, char *buffer, int buf_size);
 
 int main() {
 
+    /*Network key information*/
     char ip_string[] = "128.168.0.10";
     uint32_t ip_integer=2158493706;
     char network_ip_string[] = "128.168.0.0";
@@ -74,6 +73,7 @@ int main() {
     char ip_string_min[]= "128.168.0.1";
     int number_of_hosts = 254;
     char ip_string_max[]= "128.168.0.254";
+
     /*Calculated variables*/
     char buffer[BUF_SIZE];
     char ip_string_calc[PREFIX_LEN];
@@ -83,12 +83,11 @@ int main() {
     uint32_t subnet_mask_calc;
 
     /*
-     test get_ip_integer_equivalent
+     Test get_ip_integer_equivalent
      input         128.168.0.10
      output        2158493706
      binary output 10000000101010000000000000001010
     */
-
     ip_integer_calc = get_ip_integer_equivalent(ip_string);
     printf("Test int2bin:                    Output %u:    Correct = %u\n\n",ip_integer_calc,ip_integer);
 
@@ -99,6 +98,7 @@ int main() {
      */
     get_abcd_ip_format(ip_integer,ip_string_calc);
     printf("Test get_abcd_ip_format:         Output %s:  Correct = %s\n\n",ip_string_calc,ip_string);
+
      /*
       *Test get_subnet_cardinality
       * Input 24
@@ -110,31 +110,13 @@ int main() {
     buffer[BUF_SIZE - 1] = '\0';
     int2bin(subnet_mask_calc,buffer,BUF_SIZE-1);
     printf("Subnet cardinality for mask %d as binary=%s\n\n",subnet_prefix,buffer);
-
     /*
-    char ipadd_buffer[prefix_len];
-    memset(ipadd_buffer,0,prefix_len);
-    char *ip_address = "192.168.2.10";
-    int mask = 20;
-    get_broadcast_address(ip_address,mask,ipadd_buffer);
-    print("broadcast adress = %s\n",ipadd_buffer);
-    */
-    /*Test get_subnet_cardinality*/
-    /*Input ip adress 192.168.2.10 and mask = 24*/
-    /*Output*/
-     /*;*/
-    int mask = 20;
-    void get_broadcast_address(char *ip_address,int mask,char *output_buffer);
-    /*testing*/
-    buffer[BUF_SIZE - 1] = '\0';
-    /*int x = 0xFFFFFFFF<<(32-subnet_prefix);*/
-    uint32_t x =15;
-    int2bin(x,buffer,BUF_SIZE-1);
-    printf("%d as binary=%s\n",x,buffer);
-    /*unsigned long per = (0xFFFFFFFF << (32 - mask)) & 0xFFFFFFFF;*/
-    /*printf("%lu\n",per);*/
-
-    /*printf("%lu.%lu.%lu.%lu\n", per >> 24, (per >> 16) & 0xFF, (per >> 8) & 0xFF, per & 0xFF);*/
+     *Test get_broadcast_address
+     *Input 128.168.0.10
+     *Output 128.168.0.255
+     */
+    get_broadcast_address(ip_string, subnet_prefix ,broadcast_string_calc);
+    printf("Test get_broadcast_addresss: Output  %s: Correct = %s\n",broadcast_string_calc,broadast_string);
     return 0;
 }
 
@@ -174,7 +156,7 @@ get_broadcast_address(ip_address,mask,ipadd_buffer);
 print("Broadcast adress = %s\n",ipadd_buffer);
 */
 void get_broadcast_address(char *ip_address,int mask,char *output_buffer){
-
+    uint32_t ip_address_integer = get_ip_integer_equivalent(ip_address);
 }
 /*
 char *ip_address = "192.168.2.10";&j
