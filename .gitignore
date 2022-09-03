@@ -6,6 +6,7 @@
 ### C ###
 # Prerequisites
 *.d
+*.swp
 
 # Object files
 *.o
