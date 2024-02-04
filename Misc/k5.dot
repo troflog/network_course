@@ -1,0 +1,9 @@
+strict digraph "" {
+	X -> W	[weight=5];
+	X -> V	[weight=12];
+	W -> G	[weight=1];
+	W -> F	[weight=23];
+	G -> F	[weight=1];
+	V -> W	[weight=1];
+	V -> F	[weight=33];
+}
