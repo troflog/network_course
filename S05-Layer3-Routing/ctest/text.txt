@@ -1,0 +1,19 @@
+? (192.168.56.2) at 08:00:27:51:0c:54 [ether] on vboxnet0
+? (192.168.1.162) at d0:c2:4e:49:e0:6d [ether] on enxf8e43b5c075a
+? (192.168.1.237) at aa:a7:63:24:5e:55 [ether] on enxf8e43b5c075a
+? (192.168.1.121) at 3e:32:78:c6:f1:c4 [ether] on enxf8e43b5c075a
+Chromecast.lan (192.168.1.173) at e8:c7:4f:05:95:01 [ether] on wlp3s0
+Samsung.lan (192.168.1.124) at a0:d0:5b:4e:1b:60 [ether] on enxf8e43b5c075a
+? (192.168.1.121) at 3e:32:78:c6:f1:c4 [ether] on wlp3s0
+HP4567DC.lan (192.168.1.182) at b4:b6:86:45:67:dc [ether] on enxf8e43b5c075a
+? (192.168.1.237) at aa:a7:63:24:5e:55 [ether] on wlp3s0
+stua.lan (192.168.1.103) at 08:66:98:ce:4e:e9 [ether] on enxf8e43b5c075a
+? (192.168.1.148) at ee:4d:ba:ba:ba:9b [ether] on wlp3s0
+? (192.168.1.134) at 0a:d4:f7:64:c1:68 [ether] on wlp3s0
+? (192.168.1.148) at ee:4d:ba:ba:ba:9b [ether] on enxf8e43b5c075a
+OpenWrt.lan (192.168.1.1) at a0:b5:3c:44:fb:16 [ether] on enxf8e43b5c075a
+stua.lan (192.168.1.103) at 08:66:98:ce:4e:e9 [ether] on wlp3s0
+OpenWrt.lan (192.168.1.1) at a0:b5:3c:44:fb:16 [ether] on wlp3s0
+? (192.168.1.134) at 0a:d4:f7:64:c1:68 [ether] on enxf8e43b5c075a
+Chromecast.lan (192.168.1.173) at e8:c7:4f:05:95:01 [ether] on enxf8e43b5c075a
+? (169.254.169.254) at <incomplete> on enxf8e43b5c075a
